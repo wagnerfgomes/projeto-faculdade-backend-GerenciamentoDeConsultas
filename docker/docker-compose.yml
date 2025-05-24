@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql
+    container_name: mysql_estoque
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: estoquedb
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
